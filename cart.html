@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ hàng - GymStore</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="cart.style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>GymStore 🏋️</h1>
+            <div class="header-tools">
+                <a href="index.html" id="shop-link">Quay lại Shop</a>
+                <a href="wishlist.html" id="wishlist-link">Yêu thích</a>
+                <a href="profile.html" id="profile-link">Tài khoản</a>
+                <button id="logout-btn">Đăng xuất</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="cart-wrapper">
+            <h2>Giỏ hàng của bạn</h2>
+            
+            <div id="cart-items-container">
+                </div>
+
+            <div id="cart-summary">
+                
+                <form id="coupon-form">
+                    <label for="coupon-input">Mã giảm giá</label>
+                    <div class="coupon-apply">
+                        <input type="text" id="coupon-input" placeholder="Nhập mã...">
+                        <button type="submit" id="coupon-btn">Áp dụng</button>
+                    </div>
+                    <p id="coupon-message"></p> </form>
+                <div class="summary-row">
+                    <span>Tạm tính:</span>
+                    <span id="summary-subtotal">0đ</span>
+                </div>
+                <div class="summary-row discount hidden" id="discount-row">
+                    <span>Giảm giá:</span>
+                    <span id="summary-discount">0đ</span>
+                </div>
+                <div class="summary-row">
+                    <span>Phí vận chuyển:</span>
+                    <span id="summary-shipping">0đ</span>
+                </div>
+                <div class="summary-row total">
+                    <span>Tổng cộng:</span>
+                    <span id="summary-total">0đ</span>
+                </div>
+                <button id="checkout-btn">Tiến hành Thanh toán</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="data.js"></script>
+    <script src="cart.script.js"></script>
+</body>
+</html>

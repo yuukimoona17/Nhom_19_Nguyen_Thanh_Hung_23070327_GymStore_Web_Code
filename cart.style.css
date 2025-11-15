@@ -1,0 +1,222 @@
+/* cart.style.css - CSS riêng cho trang giỏ hàng */
+
+.cart-wrapper {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: var(--card-bg-color);
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.cart-wrapper h2 {
+    color: var(--secondary-color);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 15px;
+    margin-top: 0;
+}
+
+/* Kiểu dáng của 1 sản phẩm trong giỏ */
+.cart-item {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    border-bottom: 1px solid var(--primary-color);
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.cart-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.cart-item-info {
+    flex-grow: 1;
+}
+
+.cart-item-info h3 {
+    margin: 0 0 10px 0;
+    color: var(--text-color);
+}
+
+.cart-item-info .price {
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+.cart-item-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+}
+
+.cart-item-quantity {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.cart-item-quantity input {
+    width: 50px;
+    text-align: center;
+    background-color: var(--search-bg);
+    color: var(--text-color);
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    padding: 5px;
+}
+.cart-item-quantity button {
+    background: none;
+    border: 1px solid var(--text-secondary);
+    color: var(--text-secondary);
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.remove-item-btn {
+    background: none;
+    border: none;
+    color: #e94560; /* Màu đỏ cho nút xóa */
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.cart-item-total {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* Phần tổng tiền */
+#cart-summary {
+    /* (CẬP NHẬT) Xóa border-top cũ */
+    margin-top: 30px;
+    padding-top: 20px;
+}
+
+/* (MỚI) CSS cho Form Giảm giá */
+#coupon-form {
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+#coupon-form label {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+.coupon-apply {
+    display: flex;
+    gap: 10px;
+}
+#coupon-input {
+    flex-grow: 1;
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid var(--primary-color);
+    background-color: var(--search-bg);
+    color: var(--text-color);
+    font-size: 16px;
+    font-family: var(--font-main);
+    box-sizing: border-box; 
+}
+#coupon-btn {
+    padding: 12px 20px;
+    background-color: var(--secondary-color);
+    color: #1a1a1a;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+#coupon-btn:hover {
+    background-color: #e6c300;
+}
+#coupon-message {
+    font-size: 14px;
+    margin: 10px 0 0 0;
+}
+#coupon-message.success {
+    color: #4CAF50; /* Màu xanh lá */
+}
+#coupon-message.error {
+    color: #e94560; /* Màu đỏ */
+}
+/* (HẾT MỚI) */
+
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+.summary-row.total {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--secondary-color);
+    border-top: 2px solid var(--secondary-color); /* (MỚI) Thêm border-top vào đây */
+    padding-top: 15px; /* (MỚI) Thêm padding */
+}
+.summary-row.discount { /* (MỚI) Style cho dòng giảm giá */
+    color: #4CAF50; /* Màu xanh lá */
+}
+.summary-row span:last-child {
+    font-weight: bold;
+}
+
+#checkout-btn {
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: var(--secondary-color);
+    color: #1a1a1a;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+#checkout-btn:hover {
+    background-color: #e6c300;
+}
+
+#empty-cart-message {
+    text-align: center;
+    font-size: 18px;
+    color: var(--text-secondary);
+    padding: 50px 0;
+}
+
+/* (MỚI) Lớp tiện ích */
+.hidden {
+    display: none;
+}
+
+/* Responsive cho Giỏ hàng */
+@media (max-width: 576px) {
+    .cart-wrapper {
+        padding: 20px;
+    }
+    .cart-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    .cart-item-actions {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .cart-item-total {
+        align-self: flex-end; 
+    }
+}

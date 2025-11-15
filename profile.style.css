@@ -1,0 +1,246 @@
+/* profile.style.css - CSS cho trang tài khoản */
+
+main.container {
+    display: block;
+}
+
+#shop-link {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    padding: 8px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+#shop-link:hover {
+    background-color: #555;
+    color: var(--text-color);
+}
+body.light-mode #shop-link:hover {
+    background-color: #ddd;
+}
+
+/* Hệ thống Tab Trang Profile */
+.profile-tabs {
+    display: flex;
+    border-bottom: 2px solid var(--primary-color);
+    margin-bottom: 20px;
+}
+.profile-tab-btn {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 18px;
+    font-family: var(--font-main);
+    padding: 10px 20px;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    transition: color 0.3s, border-color 0.3s;
+}
+.profile-tab-btn:hover {
+    color: var(--text-color);
+}
+.profile-tab-btn.active {
+    color: var(--secondary-color);
+    border-bottom-color: var(--secondary-color);
+    font-weight: bold;
+}
+.profile-tab-content {
+    display: none; 
+}
+.profile-tab-content.active {
+    display: block; 
+}
+
+
+/* Layout 2 cột (bên trong tab) */
+.profile-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr; 
+    gap: 20px;
+}
+
+.profile-card {
+    background-color: var(--card-bg-color);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-card h3 {
+    color: var(--secondary-color);
+    margin-top: 0;
+    border-bottom: 1px solid var(--primary-color);
+    padding-bottom: 10px;
+}
+
+/* Style cho Form */
+.form-group {
+    margin-bottom: 20px;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid var(--primary-color);
+    background-color: var(--search-bg);
+    color: var(--text-color);
+    font-size: 16px;
+    font-family: var(--font-main);
+    box-sizing: border-box; 
+}
+.form-group input:disabled {
+    background-color: var(--primary-color);
+    opacity: 0.7;
+}
+
+.save-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--secondary-color);
+    color: #1a1a1a;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+}
+.save-btn:hover {
+    background-color: #e6c300;
+}
+
+/* Style cho Máy đề xuất */
+.recommend-placeholder {
+    color: var(--text-secondary);
+    text-align: center;
+    margin-top: 50px;
+    font-style: italic;
+}
+
+.rec-product {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--primary-color);
+    cursor: pointer; 
+    transition: background-color 0.3s; 
+}
+.rec-product:hover { 
+    background-color: var(--primary-color);
+}
+.rec-product:last-child {
+    border-bottom: none;
+}
+.rec-product img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+.rec-product-info h4 {
+    margin: 0 0 5px 0;
+    color: var(--text-color);
+    font-size: 16px;
+}
+.rec-product-info span {
+    color: var(--secondary-color);
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* CSS cho Lịch sử Đơn hàng (CẬP NHẬT) */
+#order-history-list .placeholder {
+    color: var(--text-secondary);
+    text-align: center;
+    padding: 30px;
+    font-style: italic;
+}
+.order-item {
+    background-color: var(--primary-color);
+    border-radius: 5px;
+    margin-bottom: 15px;
+    padding: 20px;
+}
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* (SỬA) align-items: flex-start */
+    border-bottom: 1px solid var(--card-bg-color);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    flex-wrap: wrap; /* (MỚI) Cho phép rớt hàng */
+    gap: 10px; /* (MỚI) */
+}
+.order-header-info h4 {
+    margin: 0 0 5px 0;
+    color: var(--secondary-color);
+    font-size: 18px;
+}
+.order-header-info span {
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+.order-total {
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--secondary-color);
+    text-align: right; /* (MỚI) */
+}
+.order-detail-line { /* (MỚI) */
+    display: block;
+    font-size: 14px;
+    color: var(--text-secondary);
+    font-weight: normal;
+}
+.order-detail-line.discount { /* (MỚI) */
+    color: #4CAF50;
+}
+.order-total-final { /* (MỚI) */
+    display: block;
+    margin-top: 5px;
+    font-size: 18px;
+}
+
+.order-item-list {
+    /* (CSS cho danh sách sản phẩm trong đơn hàng, giống .summary-item) */
+}
+.order-product {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+.order-product img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 3px;
+}
+.order-product-name {
+    color: var(--text-color);
+    flex-grow: 1;
+}
+.order-product-qty, .order-product-price {
+    color: var(--text-secondary);
+}
+/* (HẾT MỚI) */
+
+
+/* Responsive cho Profile */
+@media (max-width: 992px) {
+    .profile-layout {
+        grid-template-columns: 1fr; /* 1 cột */
+    }
+}

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GymStore - Trang chủ</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>GymStore 🏋️</h1>
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Tìm kiếm sản phẩm...">
+                <div id="search-suggestions"></div>
+            </div>
+            <div class="header-tools">
+                <a href="profile.html" id="profile-link">Tài khoản</a>
+                <a href="wishlist.html" id="wishlist-link">Yêu thích</a>
+                <a href="cart.html" id="cart-link">Giỏ hàng (0)</a>
+                <button id="theme-toggle">☀️</button>
+                <button id="logout-btn">Đăng xuất</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero-banner">
+        <div class="hero-content">
+            <h2>Kiến Tạo Vóc Dáng Mơ Ước</h2>
+            <p>Trang bị dụng cụ gym chất lượng hàng đầu ngay hôm nay.</p>
+            <a href="#content-grid" class="cta-btn">Khám phá ngay</a>
+        </div>
+    </section>
+
+    <section class="featured-products container">
+        <h2>Sản Phẩm Bán Chạy</h2>
+        <div id="featured-grid">
+            </div>
+    </section>
+
+    <div class="mobile-controls container">
+        <button id="mobile-filter-btn">Lọc Sản Phẩm ☰</button>
+    </div>
+
+    <main class="container">
+
+        <aside id="sidebar">
+            <button id="sidebar-close-btn">&times;</button>
+            
+            <h2>Danh mục</h2>
+            <nav id="filter-nav">
+                <button class="filter-btn active" data-filter="all">Tất cả sản phẩm</button>
+                <button class="filter-btn" data-filter="ta">Tạ & Phụ kiện</button>
+                <button class="filter-btn" data-filter="may-tap">Máy tập & Ghế</button>
+                <button class="filter-btn" data-filter="phu-kien">Phụ kiện khác</button>
+            </nav>
+
+            <h2 style="margin-top: 20px;">Bộ lọc</h2>
+            
+            <div class="filter-group">
+                <h4>Khoảng giá</h4>
+                <div class="filter-group-price">
+                    <input type="number" id="filter-price-min" placeholder="Từ 0đ">
+                    <span>-</span>
+                    <input type="number" id="filter-price-max" placeholder="Đến...">
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <h4>Đánh giá</h4>
+                <div class="filter-group-rating">
+                    <label>
+                        <input type="radio" name="rating-filter" value="0" checked> Tất cả
+                    </label>
+                    <label>
+                        <input type="radio" name="rating-filter" value="4"> ⭐ 4 sao trở lên
+                    </label>
+                    <label>
+                        <input type="radio" name="rating-filter" value="3"> ⭐ 3 sao trở lên
+                    </label>
+                </div>
+            </div>
+
+            <h2 style="margin-top: 20px;">Sắp xếp</h2>
+            <div id="tools-nav">
+                <select id="sort-select" class="filter-btn">
+                    <option value="default">Sắp xếp mặc định</option>
+                    <option value="price-asc">Giá: Thấp đến Cao</option>
+                    <option value="price-desc">Giá: Cao đến Thấp</option>
+                    <option value="a-z">Tên: A-Z</option>
+                    <option value="z-a">Tên: Z-A</option>
+                </select>
+            </div>
+        </aside>
+
+        <section id="content-grid">
+            </section>
+
+    </main>
+    
+    <div id="pagination-container"></div>
+
+
+    <div id="modal-container" class="modal-hidden">
+        <div id="modal-content">
+            <button id="modal-close-btn">&times;</button>
+            </div>
+    </div>
+
+    <div id="overlay"></div>
+    <div id="toast-container"></div>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

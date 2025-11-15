@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tài khoản - GymStore</title>
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="profile.style.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>GymStore 🏋️</h1>
+            <div class="header-tools">
+                <a href="index.html" id="shop-link">Quay lại Shop</a> 
+                <a href="wishlist.html" id="wishlist-link">Yêu thích</a>
+                <a href="cart.html" id="cart-link">Giỏ hàng (0)</a> 
+                <button id="logout-btn">Đăng xuất</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <h2>Tài khoản của tôi</h2>
+
+        <div class="profile-tabs">
+            <button class="profile-tab-btn active" data-tab="tab-profile">Hồ sơ & Đề xuất</button>
+            <button class="profile-tab-btn" data-tab="tab-history">Lịch sử Đơn hàng</button>
+        </div>
+
+        <div id="tab-profile" class="profile-tab-content active">
+            <div class="profile-layout">
+                <div class="profile-card">
+                    <h3>Thông tin cá nhân</h3>
+                    <form id="profile-form">
+                        <div class="form-group">
+                            <label for="profile-name">Tên của bạn</label>
+                            <input type="text" id="profile-name" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="profile-email">Email</label>
+                            <input type="email" id="profile-email" disabled>
+                        </div>
+                        
+                        <h3>Chỉ số & Mục tiêu</h3>
+                        <div class="form-group">
+                            <label for="profile-height">Chiều cao (cm)</label>
+                            <input type="number" id="profile-height" placeholder="Ví dụ: 170">
+                        </div>
+                        <div class="form-group">
+                            <label for="profile-weight">Cân nặng (kg)</label>
+                            <input type="number" id="profile-weight" placeholder="Ví dụ: 65">
+                        </div>
+                        <div class="form-group">
+                            <label for="profile-goal">Mục tiêu chính của bạn</label>
+                            <select id="profile-goal">
+                                <option value="">-- Chọn mục tiêu --</option>
+                                <option value="tang-co">Tăng cơ (Build Muscle)</option>
+                                <option value="giam-mo">Giảm mỡ (Lose Fat)</option>
+                                <option value="tai-nha">Tập tại nhà (Home Workout)</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="save-btn">Lưu & Nhận Đề Xuất</button>
+                    </form>
+                </div>
+                
+                <div class="profile-card">
+                    <h3>Sản phẩm đề xuất cho bạn</h3>
+                    <div id="recommendation-engine">
+                        <p class="recommend-placeholder">Vui lòng chọn mục tiêu và nhấn "Lưu" để nhận đề xuất sản phẩm phù hợp.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="tab-history" class="profile-tab-content">
+            <div class="profile-card">
+                <h3>Lịch sử Đơn hàng</h3>
+                <div id="order-history-list">
+                    </div>
+            </div>
+        </div>
+
+    </main>
+
+    <div id="modal-container" class="modal-hidden">
+        <div id="modal-content">
+            <button id="modal-close-btn">&times;</button>
+        </div>
+    </div>
+
+    <div id="overlay"></div>
+    <div id="toast-container"></div>
+
+    <script src="data.js"></script> 
+    <script src="profile.script.js"></script>
+</body>
+</html>

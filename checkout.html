@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanh toán - GymStore</title>
+    <link rel="stylesheet" href="style.css"> <link rel="stylesheet" href="checkout.style.css"> <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>GymStore 🏋️</h1>
+            <div class="header-tools">
+                <a href="index.html" id="shop-link">Tiếp tục mua sắm</a>
+                <button id="logout-btn">Đăng xuất</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="checkout-layout">
+            
+            <div class="checkout-form-container">
+                <h2>Thông tin Thanh toán</h2>
+                
+                <form id="checkout-form">
+                    <div class="form-step">
+                        <h3>1. Thông tin Giao hàng</h3>
+                        <div class="form-group">
+                            <label for="checkout-name">Họ và Tên</label>
+                            <input type="text" id="checkout-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="checkout-email">Email</label>
+                            <input type="email" id="checkout-email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="checkout-phone">Số điện thoại</label>
+                            <input type="tel" id="checkout-phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="checkout-address">Địa chỉ</label>
+                            <input type="text" id="checkout-address" placeholder="Số nhà, tên đường, phường/xã, quận/huyện, tỉnh/TP" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-step">
+                        <h3>2. Phương thức Thanh toán</h3>
+                        <div class="payment-options">
+                            <label class="payment-option">
+                                <input type="radio" name="payment" value="cod" checked>
+                                <span>Thanh toán khi nhận hàng (COD)</span>
+                            </label>
+                            <label class="payment-option">
+                                <input type="radio" name="payment" value="card" disabled>
+                                <span>Thanh toán qua thẻ (Chức năng đang phát triển)</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" id="place-order-btn">Hoàn tất Đặt hàng</button>
+                </form>
+            </div>
+            
+            <div class="checkout-summary-container">
+                <h3>Tóm tắt Đơn hàng</h3>
+                <div id="summary-items">
+                    </div>
+                <div id="summary-total">
+                    <div class="summary-row">
+                        <span>Tạm tính:</span>
+                        <span id="summary-subtotal">0đ</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Phí vận chuyển:</span>
+                        <span id="summary-shipping">0đ</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>Tổng cộng:</span>
+                        <span id="summary-total-final">0đ</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <div id="toast-container"></div>
+
+    <script src="data.js"></script>
+    <script src="checkout.script.js"></script>
+</body>
+</html>
